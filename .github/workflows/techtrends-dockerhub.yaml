@@ -24,6 +24,6 @@ jobs:
                 uses: docker/build-push-action@v2
                 with:
                     context: .
-                    files: ./project/Dockerfile
+                    files: ./Dockerfile
                     push: true
                     tags: riteshkhatri42/techtrends:latest
