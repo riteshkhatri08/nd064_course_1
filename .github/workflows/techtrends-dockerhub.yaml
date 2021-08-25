@@ -1,0 +1,9 @@
+name: TechTrends - Package with Docker
+on: [push]
+jobs:
+    check-python-version:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-python@v2
+            - run: python --version
