@@ -23,6 +23,6 @@ jobs:
                 name: Build and push
                 uses: docker/build-push-action@v2
                 with:
-                    file: ./project/Dockerfile
+                    context: .
                     push: true
                     tags: riteshkhatri42/techtrends:latest
