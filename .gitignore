@@ -1418,3 +1418,14 @@ project/techtrends/Lib/site-packages/werkzeug/wrappers/__pycache__/json.cpython-
 project/techtrends/Lib/site-packages/werkzeug/wrappers/__pycache__/request.cpython-39.pyc
 project/techtrends/Lib/site-packages/werkzeug/wrappers/__pycache__/response.cpython-39.pyc
 project/techtrends/Lib/site-packages/werkzeug/wrappers/__pycache__/user_agent.cpython-39.pyc
+.vscode/settings.json
+project/.vagrant/machines/default/virtualbox/action_provision
+project/.vagrant/machines/default/virtualbox/action_set_name
+project/.vagrant/machines/default/virtualbox/box_meta
+project/.vagrant/machines/default/virtualbox/creator_uid
+project/.vagrant/machines/default/virtualbox/id
+project/.vagrant/machines/default/virtualbox/index_uuid
+project/.vagrant/machines/default/virtualbox/private_key
+project/.vagrant/machines/default/virtualbox/synced_folders
+project/.vagrant/machines/default/virtualbox/vagrant_cwd
+project/.vagrant/rgloader/loader.rb
