@@ -4,7 +4,6 @@ metadata:
   labels:
     kubernetes.io/metadata.name: sandbox
   name: sandbox
-  resourceVersion: "1217"
 spec:
   finalizers:
   - kubernetes
