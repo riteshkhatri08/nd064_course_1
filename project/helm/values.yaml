@@ -10,7 +10,7 @@ service:
 deploy:
   image:
     repository: riteshkhatri42/techtrends
-    tags: latest
+    tag: latest
     pullPolicy: IfNotPresent
   replicaCount: 1
   resources:
