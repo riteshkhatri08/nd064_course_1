@@ -13,7 +13,7 @@ deploy:
     # repository: riteshkhatri42/techtrends
     # tags: latest
     pullPolicy: Always
-  replicaCount: 5
+  replicaCount: 3
   resources:
     requests:
       memory: 128Mi
