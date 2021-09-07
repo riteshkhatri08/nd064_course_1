@@ -12,7 +12,7 @@ deploy:
   image:
     # repository: riteshkhatri42/techtrends
     # tags: latest
-    # pullPolicy: IfNotPresent
+    pullPolicy: IfNotPresent
   replicaCount: 3
   resources:
     requests:
