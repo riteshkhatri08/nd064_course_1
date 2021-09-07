@@ -4,7 +4,6 @@ metadata:
   labels:
     kubernetes.io/metadata.name: {{ .Values.namespace.name}}
   name: {{ .Values.namespace.name}}
-  resourceVersion: "1217"
 spec:
   finalizers:
   - kubernetes
