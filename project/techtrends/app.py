@@ -1,6 +1,6 @@
 import sqlite3
 from datetime import datetime
-import logging
+import logging, sys
 
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash, json
 from werkzeug.exceptions import abort
@@ -44,14 +44,13 @@ def index():
 @app.route('/<int:post_id>')
 def post(post_id):
     post = get_post(post_id)
-    dt_string = datetime.now().strftime("%d/%m/%Y, %H:%M:%S,")
     if post is None:
-        app.logger.info(dt_string + "Article doesn't exist - Returning 404!")
+        app.logger.info("Article doesn't exist - Returning 404!")
         return render_template('404.html'), 404
     else:
-        app.logger.info(dt_string + " Article - \"" + post['title'] +
-                        "\"retrieved !")
-
+        app.logger.info("Article - \"" + post['title'] +
+                        "\" retrieved !")
+        
         # formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
         return render_template('post.html', post=post)
@@ -60,8 +59,8 @@ def post(post_id):
 # Define the About Us page
 @app.route('/about')
 def about():
-    dt_string = datetime.now().strftime("%d/%m/%Y, %H:%M:%S,")
-    app.logger.info(dt_string + "Returing \"About Us \" page")
+    
+    app.logger.info("Returing \"About Us \" page")
     return render_template('about.html')
 
 
@@ -81,8 +80,8 @@ def create():
                 (title, content))
             connection.commit()
             connection.close()
-            dt_string = datetime.now().strftime("%d/%m/%Y, %H:%M:%S,")
-            app.logger.info(dt_string + "New Article \"" + title + "\" created")
+            app.logger.info("New Article \"" + title +
+                            "\" created")
             return redirect(url_for('index'))
 
     return render_template('create.html')
@@ -114,5 +113,13 @@ def metrics():
 
 # start the application on port 3111
 if __name__ == "__main__":
-    logging.basicConfig(encoding='utf-8', level=logging.DEBUG)
+    #Set up logging
+    stdout_handler = logging.StreamHandler(sys.stdout)
+    stderr_handler = logging.StreamHandler(sys.stderr)
+    stdout_handler.setLevel(logging.DEBUG)
+    stderr_handler.setLevel(logging.ERROR)
+    handlers = [stdout_handler, stderr_handler]
+    logging.basicConfig(format='%(levelname)s:%(name)s: %(asctime)s %(message)s', encoding='utf-8',level=logging.DEBUG, datefmt='%d/%m/%Y, %H:%M:%S,',handlers=handlers)
+    
     app.run(host='0.0.0.0', port='3111')
+   

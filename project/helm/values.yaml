@@ -22,6 +22,8 @@ deploy:
       cpu: 500m
   containerPort: 3111
   livenessProbePath: /healthz
+  livenessProbePort: 3111
   readinessProbePath: /healthz
+  readinessProbePort: 3111
   
   
